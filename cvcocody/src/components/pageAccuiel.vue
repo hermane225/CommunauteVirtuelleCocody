@@ -102,38 +102,130 @@ Sa mission est de créer un cadre d’échanges, de formation et de rencontres e
 
     <!-- Blog Card -->
     <article class="bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow">
-      <img class="w-full h-48 object-cover rounded-t-xl" src="/src/assets/affiche.jpg" alt="Web Dev Blog"/>
-      <div class="p-6">
-        <h2 class="text-xl font-bold text-gray-800 mb-2">JOURNEE AKWABA</h2>
-        <p class="text-gray-600 mb-4">Explore trends shaping web development.</p>
-        <div class="flex justify-between items-center">
-          <button class="bg-purple-800 text-white px-4 py-2 rounded-lg hover:bg-green-700">En Savoir Plus</button>
-        </div>
-      </div>
-    </article>
+    <img
+      class="w-full h-48 object-cover rounded-t-xl"
+      src="/src/assets/affiche.jpg"
+      alt="akwaba photo"
+    />
+
+<div class="p-6">
+      <h2 class="text-xl font-bold text-gray-800 mb-2">
+        Retour sur la Journée Akwaba à la communauté virtuelle de Cocody
+      </h2>
+
+      <!-- Texte avec "Lire plus" -->
+      <p class="text-gray-600 mb-4">
+        Le samedi 27 septembre dernier, la communauté virtuelle de Cocody a célébré la Journée Akwaba, un moment spécialement organisé pour accueillir chaleureusement les nouveaux membres.
+        <span v-if="showMore">
+          L’événement a offert à chacun l’occasion de faire connaissance, partager ses idées et découvrir les multiples opportunités offertes par la communauté.
+
+La journée a débuté par une séance d’accueil et d’introduction, présentant la vision et les objectifs de la communauté ainsi que les différentes manières de s’impliquer dans ses projets.
+
+Les participants ont ensuite pu profiter de rencontres et échanges, tissant de nouveaux liens et trouvant parfois des partenaires pour de futurs projets.
+
+Des activités interactives, incluant jeux, quiz et discussions, ont animé la journée et renforcé les liens entre les membres.
+
+Enfin, la présentation des projets et initiatives a permis à chacun de comprendre comment contribuer concrètement et laisser sa marque dans la communauté.
+
+Cette journée a été bien plus qu’un simple événement : elle a été un véritable moment de partage, de convivialité et de découverte, apprécié autant par les nouveaux arrivants que par les membres présents depuis longtemps. La Journée Akwaba a confirmé l’engagement de la communauté à créer des liens solides et à offrir un environnement stimulant pour tous ses membres.
+        </span>
+      </p>
+
+      <div class="flex justify-between items-center">
+<button @click="showMore = !showMore" class="bg-purple-800 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors">
+  {{ showMore ? "Réduire" : "En Savoir Plus"}}
+
+</button>
+
+
+</div>
+   </div>
+  </article>
 
     <!-- Product Card -->
     <article class="bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow">
-      <img class="w-full h-48 object-cover rounded-t-xl" src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d" alt="Web Dev Blog" />
-      <div class="p-6">
-        <h2 class="text-xl font-bold text-gray-800 mb-2">La Journée AKWABA au nouveaux Bacheliers</h2>
-        <p class="text-gray-600 mb-4">Explore trends shaping web development.</p>
-        <div class="flex justify-between items-center">
-          <button class="bg-purple-800 text-white px-4 py-2 rounded-lg hover:bg-green-700">En Savoir Plus </button>
-        </div>
-      </div>
-    </article>
-    <!-- Profile Card -->
-    <article class="bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow">
-      <img class="w-full h-48 object-cover rounded-t-xl" src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d" alt="Web Dev Blog" />
-      <div class="p-6">
-        <h2 class="text-xl font-bold text-gray-800 mb-2">The Future of Web Development</h2>
-        <p class="text-gray-600 mb-4">Explore trends shaping web development.</p>
-        <div class="flex justify-between items-center">
-          <button class="bg-purple-800 text-white px-4 py-2 rounded-lg hover:bg-green-700">En Savoir Plus</button>
-        </div>
-      </div>
-    </article>
+    <img
+      class="w-full h-48 object-cover rounded-t-xl"
+      src="/src/assets/affiche.jpg"
+      alt="akwaba photo"
+    />
+
+<div class="p-6">
+      <h2 class="text-xl font-bold text-gray-800 mb-2">
+        Retour sur la Journée Akwaba à la communauté virtuelle de Cocody
+      </h2>
+
+      <!-- Texte avec "Lire plus" -->
+      <p class="text-gray-600 mb-4">
+        Le samedi 27 septembre dernier, la communauté virtuelle de Cocody a célébré la Journée Akwaba, un moment spécialement organisé pour accueillir chaleureusement les nouveaux membres.
+        <span v-if="showMore">
+          L’événement a offert à chacun l’occasion de faire connaissance, partager ses idées et découvrir les multiples opportunités offertes par la communauté.
+
+La journée a débuté par une séance d’accueil et d’introduction, présentant la vision et les objectifs de la communauté ainsi que les différentes manières de s’impliquer dans ses projets.
+
+Les participants ont ensuite pu profiter de rencontres et échanges, tissant de nouveaux liens et trouvant parfois des partenaires pour de futurs projets.
+
+Des activités interactives, incluant jeux, quiz et discussions, ont animé la journée et renforcé les liens entre les membres.
+
+Enfin, la présentation des projets et initiatives a permis à chacun de comprendre comment contribuer concrètement et laisser sa marque dans la communauté.
+
+Cette journée a été bien plus qu’un simple événement : elle a été un véritable moment de partage, de convivialité et de découverte, apprécié autant par les nouveaux arrivants que par les membres présents depuis longtemps. La Journée Akwaba a confirmé l’engagement de la communauté à créer des liens solides et à offrir un environnement stimulant pour tous ses membres.
+        </span>
+      </p>
+
+      <div class="flex justify-between items-center">
+<button @click="showMore = !showMore" class="bg-purple-800 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors">
+  {{ showMore ? "Réduire" : "En Savoir Plus"}}
+
+</button>
+
+
+</div>
+   </div>
+  </article>
+
+    <!-- ----------- -->
+     <!-- article card  -->
+<article class="bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow">
+    <img
+      class="w-full h-48 object-cover rounded-t-xl"
+      src="/src/assets/affiche.jpg"
+      alt="akwaba photo"
+    />
+
+<div class="p-6">
+      <h2 class="text-xl font-bold text-gray-800 mb-2">
+        Retour sur la Journée Akwaba à la communauté virtuelle de Cocody
+      </h2>
+
+      <!-- Texte avec "Lire plus" -->
+     <p class="text-gray-600 mb-4">
+        Le samedi 27 septembre dernier, la communauté virtuelle de Cocody a célébré la Journée Akwaba, un moment spécialement organisé pour accueillir chaleureusement les nouveaux membres.
+        <span v-if="showMore">
+          L’événement a offert à chacun l’occasion de faire connaissance, partager ses idées et découvrir les multiples opportunités offertes par la communauté.
+
+     La journée a débuté par une séance d’accueil et d’introduction, présentant la vision et les objectifs de la communauté ainsi que les différentes manières de s’impliquer dans ses projets.
+
+    Les participants ont ensuite pu profiter de rencontres et échanges, tissant de nouveaux liens et trouvant parfois des partenaires pour de futurs projets.
+
+  Des activités interactives, incluant jeux, quiz et discussions, ont animé la journée et renforcé les liens entre les membres.
+
+ Enfin, la présentation des projets et initiatives a permis à chacun de comprendre comment contribuer concrètement et laisser sa marque dans la communauté.
+
+Cette journée a été bien plus qu’un simple événement : elle a été un véritable moment de partage, de convivialité et de découverte, apprécié autant par les nouveaux arrivants que par les membres présents depuis longtemps. La Journée Akwaba a confirmé l’engagement de la communauté à créer des liens solides et à offrir un environnement stimulant pour tous ses membres.
+        </span>
+      </p>
+
+      <div class="flex justify-between items-center">
+<button @click="showMore = !showMore" class="bg-purple-800 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors">
+  {{ showMore ? "Réduire" : "En Savoir Plus"}}
+
+</button>
+
+
+</div>
+   </div>
+  </article>
 
   </section>
 
@@ -143,5 +235,7 @@ Sa mission est de créer un cadre d’échanges, de formation et de rencontres e
 </template>
 
 <script setup>
+ import { ref } from 'vue';
 
+ const showMore = ref(false);
 </script>
