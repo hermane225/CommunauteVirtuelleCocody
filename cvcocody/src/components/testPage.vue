@@ -1,27 +1,31 @@
 <template>
   <!-- nav bar section -->
-  <nav class="flex flex-wrap items-center justify-between p-3 bg-[#e8e8e5]">
-    <div class="text-xl">Bappa Flour mill</div>
+  <nav class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+    Akwaba à la Communauté Virtuelle de Cocody ( cvc)
+    <div class="text-xl"></div>
     <div class="flex md:hidden">
       <button id="hamburger" @click="toggleMenu">
-        <img
+        <!-- <img
+          v-show="!menuOpen"
           class="toggle block"
           src="https://img.icons8.com/fluent-systems-regular/2x/menu-squared-2.png"
           width="40"
           height="40"
         />
         <img
+          v-show="menuOpen"
           class="toggle hidden"
           src="https://img.icons8.com/fluent-systems-regular/2x/close-window.png"
           width="40"
           height="40"
-        />
+        /> -->
       </button>
     </div>
     <div
-      class="toggle hidden w-full md:w-auto md:flex text-right text-bold mt-5 md:mt-0 md:border-none"
+      class="w-full md:w-auto md:flex text-right text-bold mt-5 md:mt-0 md:border-none"
+      :class="{ hidden: !menuOpen && isMobile }"
     >
-      <a href="#home" class="block md:inline-block hover:text-blue-500 px-3 py-3 md:border-none"
+      <!-- <a href="#home" class="block md:inline-block hover:text-blue-500 px-3 py-3 md:border-none"
         >Home
       </a>
       <a href="#services" class="block md:inline-block hover:text-blue-500 px-3 py-3 md:border-none"
@@ -37,31 +41,29 @@
         href="#contactUs"
         class="block md:inline-block hover:text-blue-500 px-3 py-3 md:border-none"
         >Visit Us
-      </a>
+      </a> -->
     </div>
 
     <div class="toggle w-full text-end hidden md:flex md:w-auto px-2 py-2 md:rounded">
       <a href="tel:+123">
         <div class="flex justify-end">
-          <div
-            class="flex items-center h-10 w-30 rounded-md bg-[#c8a876] text-white font-medium p-2"
-          >
+          <div>
             <!-- Heroicon name: phone -->
-            <svg
+            <!-- <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
               stroke-width="1.5"
               stroke="currentColor"
               class="w-6 h-6"
-            >
-              <path
+            > -->
+            <!-- <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"
               />
-            </svg>
-            Call now
+            </svg> -->
+            <!-- Call now -->
           </div>
         </div>
       </a>
@@ -78,14 +80,17 @@
     </div>
     <div class="absolute inset-9 flex flex-col md:flex-row items-center justify-between">
       <div class="md:w-1/2 mb-4 md:mb-0">
-        <h1 class="text-grey-700 font-medium text-4xl md:text-5xl leading-tight mb-2">
-          Bappa Flour mill
+        <h1 class="text-grey-700 font-medium text-4xl md:text-3xl leading-tight mb-2">
+          Unir, Former, Inspirer
         </h1>
-        <p class="font-regular text-xl mb-8 mt-4">One stop solution for flour grinding services</p>
+        <p class="font-regular text-gray-950 text-xl mb-8 mt-4">
+          Ancrée à Cocody, la communauté rassemble les étudiants de l’UVCI resident à cocody pour
+          apprendre, collaborer et grandir ensemble, aussi bien en présentiel qu’en ligne.
+        </p>
         <a
           href="#contactUs"
-          class="px-6 py-3 bg-[#c8a876] text-white font-medium rounded-full hover:bg-[#c09858] transition duration-200"
-          >Contact Us</a
+          class="rounded-md bg-purple-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+          >Découvrir la communauté</a
         >
       </div>
     </div>
@@ -94,9 +99,9 @@
   <!-- our services section -->
   <section class="py-10" id="services">
     <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Our Services</h2>
+      <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Les Activités Récentes</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+        <!-- <div class="bg-white rounded-lg shadow-md overflow-hidden">
           <img
             src="https://image3.jdomni.in/banner/13062021/42/5C/B1/45AC18B7F8EE562BC3DDB95D34_1623559815667.png?output-format=webp"
             alt="wheat flour grinding"
@@ -110,8 +115,8 @@
               and we offer a variety of flours to meet the needs of our customers.
             </p>
           </div>
-        </div>
-        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+        </div> -->
+        <!-- <div class="bg-white rounded-lg shadow-md overflow-hidden">
           <img
             src="https://images.unsplash.com/photo-1606854428728-5fe3eea23475?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Z3JhbSUyMGZsb3VyfGVufDB8fDB8fHww"
             alt="Coffee"
@@ -125,54 +130,132 @@
               is a convenient and affordable way to get the freshest gram flour possible.
             </p>
           </div>
-        </div>
+        </div> -->
         <div class="bg-white rounded-lg shadow-md overflow-hidden">
-          <img
-            src="https://image2.jdomni.in/banner/13062021/D2/99/0D/48D7F4AFC48C041DC8D80432E9_1623562146900.png?output-format=webp"
-            alt="Coffee"
-            class="w-full h-64 object-cover"
-          />
+          <img src="/src/assets/affiche.jpg" alt="affiche" class="w-full h-64 object-cover" />
           <div class="p-6 text-center">
-            <h3 class="text-xl font-medium text-gray-800 mb-2">Jowar Flour Grinding</h3>
+            <h3 class="text-xl font-medium text-gray-800 mb-2">
+              <u> Retour sur la Journée Akwaba à la communauté virtuelle de Cocody</u>
+            </h3>
             <div class="text-gray-700 text-base">
-              Our jowar grinding service is a convenient and affordable way to get fresh,
-              high-quality jowar flour. We use state-of-the-art equipment to grind jowar into a fine
-              powder, which is perfect for making roti, bread, and other dishes.
+              Le samedi 27 septembre dernier, la communauté virtuelle de Cocody a célébré la Journée
+              Akwaba, un moment spécialement organisé pour accueillir chaleureusement les nouveaux
+              membres.
               <details>
-                <summary>Read More</summary>
+                <summary>Voir Plus</summary>
                 <p>
-                  Our jowar flour is also a good source of protein and fiber, making it a healthy
-                  choice for your family.
+                  L’événement a offert à chacun l’occasion de faire connaissance, partager ses idées
+                  et découvrir les multiples opportunités offertes par la communauté. La journée a
+                  débuté par une séance d’accueil et d’introduction, présentant la vision et les
+                  objectifs de la communauté ainsi que les différentes manières de s’impliquer dans
+                  ses projets. Les participants ont ensuite pu profiter de rencontres et échanges,
+                  tissant de nouveaux liens et trouvant parfois des partenaires pour de futurs
+                  projets. Des activités interactives, incluant jeux, quiz et discussions, ont animé
+                  la journée et renforcé les liens entre les membres. Enfin, la présentation des
+                  projets et initiatives a permis à chacun de comprendre comment contribuer
+                  concrètement et laisser sa marque dans la communauté. Cette journée a été bien
+                  plus qu’un simple événement : elle a été un véritable moment de partage, de
+                  convivialité et de découverte, apprécié autant par les nouveaux arrivants que par
+                  les membres présents depuis longtemps. La Journée Akwaba a confirmé l’engagement
+                  de la communauté à créer des liens solides et à offrir un environnement stimulant
+                  pour tous ses membres.
                 </p>
               </details>
             </div>
           </div>
         </div>
+
         <div class="bg-white rounded-lg shadow-md overflow-hidden">
-          <img
-            src="https://images.unsplash.com/photo-1607672632458-9eb56696346b?q=80&w=1914&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt="Coffee"
-            class="w-full h-64 object-cover"
-          />
+          <img src="/src/assets/mtn.jpg" alt="affiche" class="w-full h-64 object-cover" />
           <div class="p-6 text-center">
-            <h3 class="text-xl font-medium text-gray-800 mb-2">Chilli pounding</h3>
+            <h3 class="text-xl font-medium text-gray-800 mb-2">
+              <u
+                >Participation des étudiants de la Communauté virtuelle de Cocody au lancement de la
+                MTN Skills Academy – UVCI</u
+              >
+            </h3>
             <div class="text-gray-700 text-base">
-              We specializes in the production of high-quality chili powder. Our chili powder is
-              made from the finest, freshest chilies, and we use traditional pounding methods to
-              ensure that our chili powder retains its full flavor and aroma.
+              La Communauté virtuelle de Cocody, composée d’étudiants de l’Université virtuelle de
+              Côte d’Ivoire (UVCI), a pris part activement à la cérémonie de lancement de la “Skills
+              Academy”, une plateforme numérique initiée par la Fondation MTN-CI en partenariat avec
+              l’UVCI.
               <details>
-                <summary>Read More</summary>
+                <summary>Voir Plus</summary>
                 <p>
-                  We offer a variety of chili powder products, including mild, medium, and hot. We
-                  also offer custom blends to meet the specific needs of our customers.
+                  L’événement s’est tenu le jeudi 25 septembre 2025 au sein de l’institution à
+                  Abidjan-Cocody, en présence de nombreuses autorités académiques et partenaires du
+                  monde du numérique. Une initiative pour renforcer les compétences numériques Le
+                  lancement, effectué symboliquement par M. Touré Vamara, représentant du ministre
+                  de l’Enseignement supérieur et de la Recherche scientifique, marque une nouvelle
+                  étape dans la promotion du numérique en Côte d’Ivoire. La plateforme MTN Skills
+                  Academy met à la disposition des apprenants plus de 400 ressources pédagogiques
+                  couvrant plusieurs domaines clés, notamment : le développement web, l’intelligence
+                  artificielle, la cybersécurité, et l’entrepreneuriat numérique. Ce partenariat
+                  vise à améliorer le taux d’employabilité des jeunes diplômés, à multiplier par
+                  trois le nombre de techniciens et d’ingénieurs formés au numérique et à favoriser
+                  la reconnaissance internationale des compétences acquises. Un lien fort avec le
+                  Statut national de l’étudiant entrepreneur (SNEE) Selon M. Touré Vamara, la
+                  plateforme vient renforcer le Statut national de l’étudiant entrepreneur (SNEE),
+                  un dispositif mis en place par le gouvernement pour encourager l’esprit
+                  d’initiative chez les jeunes. La combinaison du cadre légal du SNEE et des
+                  formations pratiques offertes par la Skills Academy permettra aux étudiants de
+                  transformer leurs projets en entreprises viables et d’apporter une réelle valeur
+                  ajoutée à l’économie numérique ivoirienne. Une présence remarquée des étudiants de
+                  la Communauté virtuelle de Cocody Les étudiants de la Communauté virtuelle de
+                  Cocody étaient présents en grand nombre lors de cette cérémonie. Leur
+                  participation témoigne de leur engagement actif dans la dynamique de
+                  transformation numérique initiée par l’UVCI et ses partenaires. Ils ont également
+                  pu échanger avec les responsables de la Fondation MTN-CI et de l’UVCI sur les
+                  opportunités de formation et de certification offertes par la plateforme.
+                </p>
+              </details>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+          <img src="/src/assets/bureau2.jpg" alt="Coffee" class="w-full h-64 object-cover" />
+          <div class="p-6 text-center">
+            <h3 class="text-xl font-medium text-gray-800 mb-2">
+              <u
+                >Réunion du bureau de la Communauté virtuelle de Cocody : Fixation de la vision et
+                des objectifs de la communauté</u
+              >
+            </h3>
+            <div class="text-gray-700 text-base">
+              Le bureau de la Communauté virtuelle de Cocody (UVCI) s’est réuni le jeudi 25
+              septembre 2025 pour une rencontre stratégique présidée par M. Gboho Nouffé, président
+              de la communauté. Cette séance de travail avait pour objectif principal de définir la
+              vision et les orientations de la communauté pour l’année académique à venir.
+              <details>
+                <summary>Voir plus</summary>
+                <p>
+                  Objectifs de la rencontre Les échanges ont porté sur la volonté du bureau de :
+                  .Servir la communauté à travers des actions concrètes et utiles aux étudiants ;
+                  -Accompagner et orienter les nouveaux membres afin de faciliter leur intégration à
+                  l’UVCI ; -Favoriser l’innovation et la formation continue dans le domaine du
+                  numérique ; -Créer un véritable réseau d’entraide et de collaboration entre les
+                  étudiants. Cette rencontre marque une étape importante dans la construction d’une
+                  communauté solidaire, dynamique et inclusive, centrée sur le partage de
+                  connaissances et l’esprit d’équipe. Déroulement de la réunion Sous la direction du
+                  président Gboho Nouffé, les membres du bureau ont échangé sur les projets
+                  prioritaires à mettre en place, notamment la création de programmes de formation
+                  interne, d’ateliers pratiques et d’activités de networking entre étudiants. Des
+                  discussions ont également porté sur l’amélioration de la communication au sein de
+                  la communauté et la valorisation des initiatives étudiantes. Résolutions et
+                  engagements À l’issue de la rencontre, les membres du bureau se sont engagés à :
+                  Promouvoir une culture de service et de leadership parmi les étudiants ; Lancer
+                  des activités formatrices et collaboratives ; Renforcer la cohésion et le
+                  sentiment d’appartenance à la communauté. Le président Gboho Nouffé a félicité les
+                  membres pour leur implication et a rappelé que « servir, former et innover »
+                  demeurent les piliers du développement de la Communauté virtuelle de Cocody.
                 </p>
               </details>
             </div>
           </div>
         </div>
         <!-- special card -->
-        <div
-          class="bg-white rounded-lg bg-gradient-to-tr from-pink-300 to-blue-300 p-0.5 shadow-lg overflow-hidden min-h-full"
+        <!-- <div class="bg-white rounded-lg bg-gradient-to-tr from-pink-300 to-blue-300 p-0.5 shadow-lg overflow-hidden min-h-full"
         >
           <div class="text-center text-white font-medium">Special product</div>
           <img
@@ -184,36 +267,37 @@
             <h3 class="text-xl font-medium text-gray-800 mb-2">Flavoured Spaghetti</h3>
             <p class="text-gray-700 text-base">
               <span class="font-medium underline">Our speciality is</span>
-              Bappa Flour Mill offers a variety of flavored spaghetti dishes that are sure to
+              <!- Bappa Flour Mill offers a variety of flavored spaghetti dishes that are sure to
               tantalize your taste buds. We use only the freshest ingredients Our flavors include:
-              Mango, spinach
-            </p>
+              Mango, spinach -->
+        <!-- </p>
           </div>
         </div>
 
-        <div class="bg-white rounded-lg shadow-md overflow-hidden">
-          <img
+        <div class="bg-white rounded-lg shadow-md overflow-hidden"> -->
+        <!-- <img
             src="https://media.istockphoto.com/id/1265641298/photo/fried-papad.jpg?s=612x612&w=0&k=20&c=e_iEy4CTvU6Thn02zGgKt_TiSYAheCKmgfTF5j52ovU="
             alt="papad"
             class="w-full h-64 object-cover"
           />
-          <div class="p-6 text-center">
-            <h3 class="text-xl font-medium text-gray-800 mb-2">Rice Papad</h3>
-            <div class="text-gray-700 text-base">
-              Our company produces high-quality rice papad that is made with the finest ingredients.
+          <div class="p-6 text-center"> -->
+        <!-- <h3 class="text-xl font-medium text-gray-800 mb-2">Rice Papad</h3>
+            <div class="text-gray-700 text-base"> -->
+        <!-- Our company produces high-quality rice papad that is made with the finest ingredients.
               We use traditional methods to make our papad, which gives it a unique flavor and
-              texture. Our papad is also gluten-free and vegan.
-              <details>
+              texture. Our papad is also gluten-free and vegan. -->
+        <!-- <details>
                 <summary>Read More</summary>
                 <p>
-                  We offer a variety of rice papad flavors, including plain, salted, spicy, and
-                  flavored. We also offer a variety of sizes and shapes to choose from. Our papad is
-                  available in bulk or in individual packages.
-                </p>
+                  <!- We offer a variety of rice papad flavors, including plain, salted, spicy, and -->
+        <!-- flavored. We also offer a variety of sizes and shapes to choose from. Our papad is
+                  available in bulk or in individual packages. -->
+        <!-- </p>
               </details>
             </div>
           </div>
         </div>
+      </div>  -->
       </div>
     </div>
   </section>
@@ -237,7 +321,7 @@
         </div>
         <div class="mt-12 md:mt-0">
           <img
-            src="https://images.unsplash.com/photo-1531973576160-7125cd663d86"
+            src="/src/assets/arriere.jpg"
             alt="About Us Image"
             class="object-cover rounded-lg shadow-md"
           />
@@ -279,7 +363,7 @@
           <div class="px-4 py-6 transform transition duration-500 hover:scale-110">
             <div class="flex justify-center">
               <img
-                src="https://image3.jdomni.in/banner/13062021/16/7E/7E/5A9920439E52EF309F27B43EEB_1623568010437.png?output-format=webp"
+                src="https://image3.jdomni.in/banner/13062021/16/7E/7 E/5A9920439E52EF309F27B43EEB_1623568010437.png?output-format=webp"
                 class="w-32 mb-3"
               />
             </div>
@@ -305,7 +389,7 @@
   <!-- gallery -->
   <section class="text-gray-700 body-font" id="gallery">
     <div class="flex justify-center text-3xl font-bold text-gray-800 text-center py-10">
-      Gallery
+      Galleries
     </div>
 
     <div
@@ -313,7 +397,7 @@
     >
       <div class="group relative">
         <img
-          src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHw1fHxuYXR1cmV8ZW58MHwwfHx8MTY5NDA5OTcyOXww&ixlib=rb-4.0.3&q=80&w=1080"
+          src="/src/assets/bg.jpg"
           alt="Image 1"
           class="aspect-[2/3] h-80 object-cover rounded-lg transition-transform transform scale-100 group-hover:scale-105"
         />
@@ -414,7 +498,7 @@
     </div>
   </section>
   <!-- footer -->
-  <section>
+  <!-- <section>
     <footer class="bg-gray-200 text-white py-4 px-3">
       <div class="container mx-auto flex flex-wrap items-center justify-between">
         <div class="w-full md:w-1/2 md:text-center md:mb-4 mb-8">
@@ -430,7 +514,7 @@
         </div>
       </div>
     </footer>
-  </section>
+  </section> -->
 </template>
 
 <script>
