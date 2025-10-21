@@ -39,48 +39,50 @@
           class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700"
         >
           <li>
-            <a
-              href="#"
+            <router-link
+              :to="{ name: 'testPage' }"
               class="block py-2 px-3 text-white bg-blue-700 rounded-sm md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500"
               aria-current="page"
-              >Accueil</a
+              >Accueil</router-link
             >
           </li>
           <li>
-            <a
-              href="#"
+            <router-link
+              :to="{ name: 'pageaccuiel' }"
               class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-              >À propos</a
+              >À propos</router-link
             >
           </li>
           <li>
-            <a
-              href="#"
+            <router-link
+              :to="{ name: 'bureauPage' }"
               class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-              >Bureau</a
+              >Bureau</router-link
             >
           </li>
           <li>
-            <a
-              href="#"
+            <router-link
+              :to="{ name: 'testPage' }"
               class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-              >Galerie</a
+              >Galerie</router-link
             >
           </li>
           <li>
-            <a
-              href="#"
+            <router-link
+              :to="{ name: 'contacPage' }"
               class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-              >Contact</a
+              >Contact</router-link
             >
           </li>
           <li>
-            <button
-              type="button"
-              class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
-            >
-              Réjoindre la communauté >
-            </button>
+            <router-link :to="{ name: 'formePage' }">
+              <button
+                type="button"
+                class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+              >
+                Réjoindre la communauté >
+              </button>
+            </router-link>
           </li>
         </ul>
       </div>

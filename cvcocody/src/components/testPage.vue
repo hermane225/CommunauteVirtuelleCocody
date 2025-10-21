@@ -87,10 +87,11 @@
           Ancrée à Cocody, la communauté rassemble les étudiants de l’UVCI resident à cocody pour
           apprendre, collaborer et grandir ensemble, aussi bien en présentiel qu’en ligne.
         </p>
-        <a
+        <router-link
+          :to="{ name: 'pageaccuiel' }"
           href="#contactUs"
-          class="rounded-md bg-purple-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-          >Découvrir la communauté</a
+          class="rounded-md bg-purple-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-green-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+          >Découvrir la communauté</router-link
         >
       </div>
     </div>
@@ -214,7 +215,7 @@
         </div>
 
         <div class="bg-white rounded-lg shadow-md overflow-hidden">
-          <img src="/src/assets/bureau2.jpg" alt="Coffee" class="w-full h-64 object-cover" />
+          <img src="/src/assets/bureau.jpg" alt="Coffee" class="w-full h-64 object-cover" />
           <div class="p-6 text-center">
             <h3 class="text-xl font-medium text-gray-800 mb-2">
               <u
@@ -307,16 +308,19 @@
     <div class="container mx-auto py-16 px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 md:grid-cols-2 items-center gap-8">
         <div class="max-w-lg">
-          <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">About Us</h2>
+          <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">
+            Au cœur de la communauté
+          </h2>
           <p class="mt-4 text-gray-600 text-lg">
-            Bappa flour mill provides our customers with the highest quality products and services.
-            We offer a wide variety of flours and spices to choose from, and we are always happy to
-            help our customers find the perfect products for their needs. We are committed to
-            providing our customers with the best possible experience. We offer competitive prices,
-            fast shipping, and excellent customer service. We are also happy to answer any questions
-            that our customers may have about our products or services. If you are looking for a
-            flour and spices service business that can provide you with the highest quality products
-            and services, then we are the company for you. We look forward to serving you!
+            La Communauté virtuelle de Cocody (CVC) regroupe les étudiants de l’Université Virtuelle
+            de Côte d’Ivoire (UVCI) résidant à Cocody ou affiliés à cette zone. Elle a pour mission
+            de soutenir et accompagner les étudiants, notamment les nouveaux arrivants, en leur
+            offrant un cadre d’entraide et de partage de connaissances. La communauté favorise
+            également l’innovation, la formation et le réseautage, en organisant des ateliers, des
+            projets collaboratifs et des activités permettant aux membres d’échanger, de développer
+            leurs compétences et de renforcer les liens entre étudiants. La CVC constitue ainsi un
+            espace dynamique où apprentissage, solidarité et collaboration sont au cœur de
+            l’expérience étudiante.
           </p>
         </div>
         <div class="mt-12 md:mt-0">
@@ -332,54 +336,48 @@
 
   <!-- why us  -->
   <section class="text-gray-700 body-font mt-10">
-    <div class="flex justify-center text-3xl font-bold text-gray-800 text-center">Why Us?</div>
+    ssa
+    <div class="flex justify-center text-3xl font-bold text-gray-800 text-center">
+      Nos atouts & valeurs
+    </div>
     <div class="container px-5 py-12 mx-auto">
       <div class="flex flex-wrap text-center justify-center">
         <div class="p-4 md:w-1/4 sm:w-1/2">
           <div class="px-4 py-6 transform transition duration-500 hover:scale-110">
             <div class="flex justify-center">
-              <img
-                src="https://image3.jdomni.in/banner/13062021/58/97/7C/E53960D1295621EFCB5B13F335_1623567851299.png?output-format=webp"
-                class="w-32 mb-3"
-              />
+              <img src="/src/assets/67_human_logo.jpg" class="w-50 mb-3" />
             </div>
-            <h2 class="title-font font-regular text-2xl text-gray-900">Latest Milling Machinery</h2>
+
+            <h2 class="title-font font-regular text-3xl text-gray-950">Solidarité et entraide</h2>
           </div>
         </div>
 
         <div class="p-4 md:w-1/4 sm:w-1/2">
           <div class="px-4 py-6 transform transition duration-500 hover:scale-110">
             <div class="flex justify-center">
-              <img
-                src="https://image2.jdomni.in/banner/13062021/3E/57/E8/1D6E23DD7E12571705CAC761E7_1623567977295.png?output-format=webp"
-                class="w-32 mb-3"
-              />
+              <img src="/src/assets/preview.jpg" class="w-50 mb-3" />
             </div>
-            <h2 class="title-font font-regular text-2xl text-gray-900">Reasonable Rates</h2>
+            <h2 class="title-font font-regular text-3xl text-gray-950">
+              Réseautage et collaboration
+            </h2>
           </div>
         </div>
 
         <div class="p-4 md:w-1/4 sm:w-1/2">
           <div class="px-4 py-6 transform transition duration-500 hover:scale-110">
             <div class="flex justify-center">
-              <img
-                src="https://image3.jdomni.in/banner/13062021/16/7E/7 E/5A9920439E52EF309F27B43EEB_1623568010437.png?output-format=webp"
-                class="w-32 mb-3"
-              />
+              <img src="/src/assets/innove.jpg" class="w-50 mb-3" />
             </div>
-            <h2 class="title-font font-regular text-2xl text-gray-900">Time Efficiency</h2>
+            <h2 class="title-font font-regular text-3xl text-gray-950">Innovation et créativité</h2>
           </div>
         </div>
 
         <div class="p-4 md:w-1/4 sm:w-1/2">
           <div class="px-4 py-6 transform transition duration-500 hover:scale-110">
             <div class="flex justify-center">
-              <img
-                src="https://image3.jdomni.in/banner/13062021/EB/99/EE/8B46027500E987A5142ECC1CE1_1623567959360.png?output-format=webp"
-                class="w-32 mb-3"
-              />
+              <img src="/src/assets/leader.jpg" class="w-50 mb-3" />
             </div>
-            <h2 class="title-font font-regular text-2xl text-gray-900">Expertise in Industry</h2>
+            <h2 class="title-font font-regular text-3xl text-gray-950">Engagement et leadership</h2>
           </div>
         </div>
       </div>
@@ -397,7 +395,7 @@
     >
       <div class="group relative">
         <img
-          src="/src/assets/bg.jpg"
+          src="/src/assets/f.jpg"
           alt="Image 1"
           class="aspect-[2/3] h-80 object-cover rounded-lg transition-transform transform scale-100 group-hover:scale-105"
         />
@@ -405,7 +403,7 @@
 
       <div class="group relative">
         <img
-          src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHw1fHxuYXR1cmV8ZW58MHwwfHx8MTY5NDA5OTcyOXww&ixlib=rb-4.0.3&q=80&w=1080"
+          src="/src/assets/bureau2.jpg"
           alt="Image 1"
           class="aspect-[2/3] h-80 object-cover rounded-lg transition-transform transform scale-100 group-hover:scale-105"
         />
@@ -413,14 +411,14 @@
 
       <div class="group relative">
         <img
-          src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHw1fHxuYXR1cmV8ZW58MHwwfHx8MTY5NDA5OTcyOXww&ixlib=rb-4.0.3&q=80&w=1080"
+          src="/src/assets/c.jpg"
           alt="Image 1"
           class="aspect-[2/3] h-80 object-cover rounded-lg transition-transform transform scale-100 group-hover:scale-105"
         />
       </div>
       <div class="group relative">
         <img
-          src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHw1fHxuYXR1cmV8ZW58MHwwfHx8MTY5NDA5OTcyOXww&ixlib=rb-4.0.3&q=80&w=1080"
+          src="/src/assets/br.jpg"
           alt="Image 1"
           class="aspect-[2/3] h-80 object-cover rounded-lg transition-transform transform scale-100 group-hover:scale-105"
         />
@@ -431,7 +429,7 @@
   </section>
 
   <!-- Visit us section -->
-  <section class="bg-gray-100">
+  <!-- <section class="bg-gray-100">
     <div class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:py-20 lg:px-8">
       <div class="max-w-2xl lg:max-w-4xl mx-auto text-center">
         <h2 class="text-3xl font-extrabold text-gray-900" id="contactUs">Visit Our Location</h2>
@@ -451,8 +449,8 @@
                     <div
                       class="flex items-center justify-between h-10 w-30 rounded-md bg-indigo-500 text-white p-2"
                     >
-                      <!-- Heroicon name: phone -->
-                      <svg
+                      <!- Heroicon name: phone -->
+  <!-- <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         viewBox="0 0 24 24"
@@ -466,8 +464,8 @@
                           d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"
                         />
                       </svg>
-                      Call now
-                    </div>
+                      Call now -->
+  <!-- </div>
                   </div>
                 </a>
               </div>
@@ -479,8 +477,8 @@
                 <h3 class="text-lg font-medium text-gray-900">Hours</h3>
                 <p class="mt-1 text-gray-600">Monday - Sunday : 2pm - 9pm</p>
               </div>
-            </div>
-          </div>
+            </div> -->
+  <!-- </div>
           <div class="rounded-lg overflow-hidden order-none sm:order-first">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3785.7850672491236!2d76.58802159999999!3d18.402630699999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcf83ca88e84341%3A0x841e547bf3ad066d!2zQmFwcGEgZmxvdXIgbWlsbCB8IOCkrOCkquCljeCkquCkviDgpKrgpYDgpKAg4KSX4KS_4KSw4KSj4KWALCDgpK7gpL_gpLDgpJrgpYAg4KSV4KS-4KSC4KSh4KSqIOCkhuCko-CkvyDgpLbgpYfgpLXgpL7gpK_gpL4!5e0!3m2!1sen!2sin!4v1713433597892!5m2!1sen!2sin"
@@ -494,9 +492,9 @@
             ></iframe>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
+      </div> -->
+  <!-- </div>
+  </section>  -->
   <!-- footer -->
   <!-- <section>
     <footer class="bg-gray-200 text-white py-4 px-3">

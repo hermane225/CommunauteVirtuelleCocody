@@ -1,11 +1,11 @@
 <template>
   <footer class="flex flex-col space-y-10 justify-center m-10">
     <nav class="flex justify-center flex-wrap gap-6 text-gray-500 font-medium">
-      <a class="hover:text-gray-900" href="#">Accueil</a>
-      <a class="hover:text-gray-900" href="#">À propos</a>
-      <a class="hover:text-gray-900" href="#">Bureau</a>
-      <a class="hover:text-gray-900" href="#">Galerie</a>
-      <a class="hover:text-gray-900" href="#">Contact</a>
+      <router-link class="hover:text-gray-900" :to="{ name: 'testPage' }">Accueil</router-link>
+      <router-link class="hover:text-gray-900" :to="{ name: 'pageaccuiel' }">À propos</router-link>
+      <router-link class="hover:text-gray-900" :to="{ name: 'bureauPage' }">Bureau</router-link>
+      <router-link class="hover:text-gray-900" :to="{ name: 'testPage' }">Galerie</router-link>
+      <router-link class="hover:text-gray-900" :to="{ name: 'contacPage' }">Contact</router-link>
     </nav>
 
     <div class="flex justify-center space-x-5">

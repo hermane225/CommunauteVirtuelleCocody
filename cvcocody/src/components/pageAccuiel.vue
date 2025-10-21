@@ -1,306 +1,120 @@
 <template>
-  <div>
-    <section class="overflow-hidden bg-white py-8 sm:py-16">
-      <div class="mx-auto max-w-7xl px-6 lg:px-8">
-        <div
-          class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2"
+  <section class="overflow-hidden bg-white py-8 sm:py-16">
+    <div class="mx-auto max-w-5xl px-6 lg:px-8">
+      <!-- Partie texte en haut -->
+      <div class="text-center lg:text-left">
+        <p class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+          Découvrons ensemble la Communauté Virtuelle de Cocody
+        </p>
+
+        <h2 class="text-base font-semibold leading-7 text-gray-600 mt-4">Unir, Former, Inspirer</h2>
+
+        <p class="mt-6 text-lg leading-8 text-gray-600 text-justify">
+          La Communauté Virtuelle de Cocody (CVC) est une initiative étudiante de l’Université
+          Virtuelle de Côte d’Ivoire (UVCI) regroupant les apprenants résidant dans la commune de
+          Cocody ou ses environs. Née de la volonté de renforcer les liens entre étudiants de la
+          formation à distance, la CVC se veut un espace de rencontre, d’apprentissage et
+          d’innovation collective.
+          <br /><br />
+          Sa mission principale est de favoriser l’épanouissement académique, professionnel et
+          social de ses membres. À travers diverses activités — rencontres en présentiel, ateliers
+          pratiques, formations, conférences et projets collaboratifs — la communauté encourage la
+          mise en réseau, le partage d’expériences et le développement de compétences
+          complémentaires à la formation universitaire.
+          <br /><br />
+          Plus qu’un simple regroupement, la CVC incarne les valeurs de solidarité, de leadership et
+          d’excellence propres à l’UVCI. Elle œuvre à créer un cadre stimulant, où chaque étudiant
+          peut s’exprimer, apprendre des autres et contribuer activement à la vie de la communauté.
+          <br /><br />
+          En rejoignant la Communauté Virtuelle de Cocody, chaque membre devient acteur de son
+          propre parcours : il bénéficie d’un accompagnement par les pairs, découvre des
+          opportunités de collaboration et participe à la construction d’une culture numérique
+          inclusive et dynamique au service du développement de la Côte d’Ivoire.
+        </p>
+
+        <!-- Points clés -->
+        <dl
+          class="mt-10 max-w-xl mx-auto space-y-8 text-base leading-7 text-gray-600 lg:max-w-none"
         >
-          <div class="lg:pr-8 lg:pt-4">
-            <div class="lg:max-w-lg">
-              <p class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                Akwaba à la Communauté Virtuelle de Cocody ( cvc)
-              </p>
-              <h2 class="text-base font-semibold leading-7 text-gray-600 flex justify-center mt-4">
-                Unir, Former, Inspirer
-              </h2>
-              <p class="mt-6 text-lg leading-8 text-gray-600">
-                La Communauté Virtuelle de Cocody (CVC) regroupe les étudiants de l’Université
-                Virtuelle de Côte d’Ivoire (UVCI) résidant dans la commune de Cocody. Sa mission est
-                de créer un cadre d’échanges, de formation et de rencontres en présentiel pour
-                renforcer la cohésion et le partage d’expériences entre les étudiants. À travers
-                diverses activités, la CVC œuvre à l’épanouissement académique, professionnel et
-                social de ses membres, tout en promouvant les valeurs d’excellence, de solidarité et
-                d’innovation propres à l’UVCI.
-              </p>
-              <dl class="mt-10 max-w-xl space-y-8 text-base leading-7 text-gray-600 lg:max-w-none">
-                <div class="relative pl-9">
-                  <dt class="inline font-semibold text-gray-900">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                      aria-hidden="true"
-                      class="absolute left-1 top-1 h-5 w-5 text-indigo-600"
-                    >
-                      <path
-                        d="M3.196 12.87l-.825.483a.75.75 0 000 1.294l7.25 4.25a.75.75 0 00.758 0l7.25-4.25a.75.75 0 000-1.294l-.825-.484-5.666 3.322a2.25 2.25 0 01-2.276 0L3.196 12.87z"
-                      ></path>
-                      <path
-                        d="M3.196 8.87l-.825.483a.75.75 0 000 1.294l7.25 4.25a.75.75 0 00.758 0l7.25-4.25a.75.75 0 000-1.294l-.825-.484-5.666 3.322a2.25 2.25 0 01-2.276 0L3.196 8.87z"
-                      ></path>
-                      <path
-                        d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
-                      ></path></svg
-                    >Engagement local
-                  </dt>
-                  <dd class="inline">
-                    <br />
-                    Ancrée à Cocody, la communauté rassemble les étudiants de l’UVCI pour apprendre,
-                    collaborer et grandir ensemble, aussi bien en présentiel qu’en ligne.
-                  </dd>
-                </div>
-                <div class="relative pl-9">
-                  <dt class="inline font-semibold text-gray-900">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                      aria-hidden="true"
-                      class="absolute left-1 top-1 h-5 w-5 text-indigo-600"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d=" M12 2C8.13 2 5 5.13 5 9c0 4.5 7 13 7 13s7-8.5 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"
-                        clip-rule="evenodd"
-                      ></path>
-                    </svg>
-                    Solidarité étudiante
-                  </dt>
-                  <dd class="inline">
-                    <br />
-                    Un espace d’entraide et de partage où chaque étudiant trouve du soutien, des
-                    opportunités et une famille universitaire unie.
-                  </dd>
-                </div>
-                <div class="relative pl-9">
-                  <dt class="inline font-semibold text-gray-900">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                      aria-hidden="true"
-                      class="absolute left-1 top-1 h-5 w-5 text-indigo-600"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M14.5 10a4.5 4.5 0 004.284-5.882c-.105-.324-.51-.391-.752-.15L15.34 6.66a.454.454 0 01-.493.11 3.01 3.01 0 01-1.618-1.616.455.455 0 01.11-.494l2.694-2.692c.24-.241.174-.647-.15-.752a4.5 4.5 0 00-5.873 4.575c.055.873-.128 1.808-.8 2.368l-7.23 6.024a2.724 2.724 0 103.837 3.837l6.024-7.23c.56-.672 1.495-.855 2.368-.8.096.007.193.01.291.01zM5 16a1 1 0 11-2 0 1 1 0 012 0z"
-                        clip-rule="evenodd"
-                      ></path>
-                      <path
-                        d="M3 4a1 1 0 011-1h16a1 1 0 011 1v16a1 1 0 01-1 1H4a1 1 0 01-1-1V4zm2 2v12h12V6H5z"
-                      >
-                        ">
-                      </path></svg
-                    >Activités et rencontres
-                  </dt>
-                  <dd class="inline">
-                    <br />
-                    Des ateliers, conférences et événements réguliers pour renforcer les
-                    compétences, créer du lien et inspirer la réussite.
-                  </dd>
-                </div>
-
-                <div class="relative pl-9">
-                  <dt class="inline font-semibold text-gray-900">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                      aria-hidden="true"
-                      class="absolute left-1 top-1 h-5 w-5 text-indigo-600"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
-                      ></path></svg
-                    >Réseau et opportunités
-                  </dt>
-                  <dd class="inline">
-                    <br />Rejoindre la communauté, c’est accéder à un réseau d’étudiants motivés et
-                    à des initiatives locales qui valorisent ton parcours académique et
-                    professionnel.
-                  </dd>
-                </div>
-              </dl>
-            </div>
-            <div class="mt-10 flex items-center gap-x-6">
-              <a
-                href="#"
-                class="rounded-md bg-purple-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                >Découvrir la communauté >
-              </a>
-            </div>
+          <div class="relative pl-9">
+            <dt class="inline font-semibold text-gray-900">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                aria-hidden="true"
+                class="absolute left-1 top-1 h-5 w-5 text-indigo-600"
+              >
+                <path
+                  d="M3.196 12.87l-.825.483a.75.75 0 000 1.294l7.25 4.25a.75.75 0 00.758 0l7.25-4.25a.75.75 0 000-1.294l-.825-.484-5.666 3.322a2.25 2.25 0 01-2.276 0L3.196 12.87z"
+                />
+              </svg>
+              Engagement local
+            </dt>
+            <dd class="inline">
+              <br />
+              Ancrée à Cocody, la communauté rassemble les étudiants pour apprendre, collaborer et
+              grandir ensemble.
+            </dd>
           </div>
 
-          <img
-            src="/src/assets/bg.jpg"
-            alt="Product screenshot"
-            class="w-[48rem] max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] md:-ml-4 lg:-ml-0"
-            width="2432"
-            height="1442"
-          />
-        </div>
+          <div class="relative pl-9">
+            <dt class="inline font-semibold text-gray-900">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                aria-hidden="true"
+                class="absolute left-1 top-1 h-5 w-5 text-indigo-600"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M12 2C8.13 2 5 5.13 5 9c0 4.5 7 13 7 13s7-8.5 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+              Solidarité étudiante
+            </dt>
+            <dd class="inline">
+              <br />Un espace d’entraide et de partage où chaque étudiant trouve du soutien.
+            </dd>
+          </div>
+
+          <div class="relative pl-9">
+            <dt class="inline font-semibold text-gray-900">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                aria-hidden="true"
+                class="absolute left-1 top-1 h-5 w-5 text-indigo-600"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M14.5 10a4.5 4.5 0 004.284-5.882c-.105-.324-.51-.391-.752-.15L15.34 6.66a.454.454 0 01-.493.11 3.01 3.01 0 01-1.618-1.616.455.455 0 01.11-.494l2.694-2.692c.24-.241.174-.647-.15-.752a4.5 4.5 0 00-5.873 4.575c.055.873-.128 1.808-.8 2.368l-7.23 6.024a2.724 2.724 0 103.837 3.837l6.024-7.23c.56-.672 1.495-.855 2.368-.8z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+              Activités et rencontres
+            </dt>
+            <dd class="inline">
+              <br />Des ateliers et conférences pour renforcer les compétences et inspirer la
+              réussite.
+            </dd>
+          </div>
+        </dl>
       </div>
-    </section>
 
-    <section>
-      <div class="flex justify-center">
-        <img class="h-auto w-1/2" src="/src/assets/bureau2.jpg" alt="image bureau" />
+      <!-- Image en bas -->
+      <div class="mt-16 flex justify-center">
+        <img
+          src="/src/assets/bg.jpg"
+          alt="Illustration de la Communauté Virtuelle de Cocody"
+          class="w-full max-w-4xl rounded-xl shadow-xl ring-1 ring-gray-400/10"
+        />
       </div>
-    </section>
-  </div>
-
-  <div class="bg-gray-100 p-10">
-    <h1 class="flex justify-center text-center text-3xl">Les Activités Récentes</h1>
-    <br />
-    <section class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <!-- Blog Card -->
-      <article class="bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow">
-        <img
-          class="w-full h-48 object-cover rounded-t-xl"
-          src="/src/assets/affiche.jpg"
-          alt="akwaba photo"
-        />
-
-        <div class="p-6">
-          <h2 class="text-xl font-bold text-gray-800 mb-2">
-            Retour sur la Journée Akwaba à la communauté virtuelle de Cocody
-          </h2>
-
-          <!-- Texte avec "Lire plus" -->
-          <p class="text-gray-600 mb-4">
-            Le samedi 27 septembre dernier, la communauté virtuelle de Cocody a célébré la Journée
-            Akwaba, un moment spécialement organisé pour accueillir chaleureusement les nouveaux
-            membres.
-            <span v-if="showMore">
-              L’événement a offert à chacun l’occasion de faire connaissance, partager ses idées et
-              découvrir les multiples opportunités offertes par la communauté. La journée a débuté
-              par une séance d’accueil et d’introduction, présentant la vision et les objectifs de
-              la communauté ainsi que les différentes manières de s’impliquer dans ses projets. Les
-              participants ont ensuite pu profiter de rencontres et échanges, tissant de nouveaux
-              liens et trouvant parfois des partenaires pour de futurs projets. Des activités
-              interactives, incluant jeux, quiz et discussions, ont animé la journée et renforcé les
-              liens entre les membres. Enfin, la présentation des projets et initiatives a permis à
-              chacun de comprendre comment contribuer concrètement et laisser sa marque dans la
-              communauté. Cette journée a été bien plus qu’un simple événement : elle a été un
-              véritable moment de partage, de convivialité et de découverte, apprécié autant par les
-              nouveaux arrivants que par les membres présents depuis longtemps. La Journée Akwaba a
-              confirmé l’engagement de la communauté à créer des liens solides et à offrir un
-              environnement stimulant pour tous ses membres.
-            </span>
-          </p>
-
-          <div class="flex justify-between items-center">
-            <button
-              @click="showMore = !showMore"
-              class="bg-purple-800 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors"
-            >
-              {{ showMore ? 'Réduire' : 'En Savoir Plus' }}
-            </button>
-          </div>
-        </div>
-      </article>
-
-      <!-- Product Card -->
-      <article class="bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow">
-        <img
-          class="w-full h-48 object-cover rounded-t-xl"
-          src="/src/assets/affiche.jpg"
-          alt="akwaba photo"
-        />
-
-        <div class="p-6">
-          <h2 class="text-xl font-bold text-gray-800 mb-2">
-            Retour sur la Journée Akwaba à la communauté virtuelle de Cocody
-          </h2>
-
-          <!-- Texte avec "Lire plus" -->
-          <p class="text-gray-600 mb-4">
-            Le samedi 27 septembre dernier, la communauté virtuelle de Cocody a célébré la Journée
-            Akwaba, un moment spécialement organisé pour accueillir chaleureusement les nouveaux
-            membres.
-            <span v-if="showMore">
-              L’événement a offert à chacun l’occasion de faire connaissance, partager ses idées et
-              découvrir les multiples opportunités offertes par la communauté. La journée a débuté
-              par une séance d’accueil et d’introduction, présentant la vision et les objectifs de
-              la communauté ainsi que les différentes manières de s’impliquer dans ses projets. Les
-              participants ont ensuite pu profiter de rencontres et échanges, tissant de nouveaux
-              liens et trouvant parfois des partenaires pour de futurs projets. Des activités
-              interactives, incluant jeux, quiz et discussions, ont animé la journée et renforcé les
-              liens entre les membres. Enfin, la présentation des projets et initiatives a permis à
-              chacun de comprendre comment contribuer concrètement et laisser sa marque dans la
-              communauté. Cette journée a été bien plus qu’un simple événement : elle a été un
-              véritable moment de partage, de convivialité et de découverte, apprécié autant par les
-              nouveaux arrivants que par les membres présents depuis longtemps. La Journée Akwaba a
-              confirmé l’engagement de la communauté à créer des liens solides et à offrir un
-              environnement stimulant pour tous ses membres.
-            </span>
-          </p>
-
-          <div class="flex justify-between items-center">
-            <button
-              @click="showMore = !showMore"
-              class="bg-purple-800 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors"
-            >
-              {{ showMore ? 'Réduire' : 'En Savoir Plus' }}
-            </button>
-          </div>
-        </div>
-      </article>
-
-      <!-- ----------- -->
-      <!-- article card  -->
-      <article class="bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow">
-        <img
-          class="w-full h-48 object-cover rounded-t-xl"
-          src="/src/assets/affiche.jpg"
-          alt="akwaba photo"
-        />
-
-        <div class="p-6">
-          <h2 class="text-xl font-bold text-gray-800 mb-2">
-            Retour sur la Journée Akwaba à la communauté virtuelle de Cocody
-          </h2>
-
-          <!-- Texte avec "Lire plus" -->
-          <p class="text-gray-600 mb-4">
-            Le samedi 27 septembre dernier, la communauté virtuelle de Cocody a célébré la Journée
-            Akwaba, un moment spécialement organisé pour accueillir chaleureusement les nouveaux
-            membres.
-            <span v-if="showMore">
-              L’événement a offert à chacun l’occasion de faire connaissance, partager ses idées et
-              découvrir les multiples opportunités offertes par la communauté. La journée a débuté
-              par une séance d’accueil et d’introduction, présentant la vision et les objectifs de
-              la communauté ainsi que les différentes manières de s’impliquer dans ses projets. Les
-              participants ont ensuite pu profiter de rencontres et échanges, tissant de nouveaux
-              liens et trouvant parfois des partenaires pour de futurs projets. Des activités
-              interactives, incluant jeux, quiz et discussions, ont animé la journée et renforcé les
-              liens entre les membres. Enfin, la présentation des projets et initiatives a permis à
-              chacun de comprendre comment contribuer concrètement et laisser sa marque dans la
-              communauté. Cette journée a été bien plus qu’un simple événement : elle a été un
-              véritable moment de partage, de convivialité et de découverte, apprécié autant par les
-              nouveaux arrivants que par les membres présents depuis longtemps. La Journée Akwaba a
-              confirmé l’engagement de la communauté à créer des liens solides et à offrir un
-              environnement stimulant pour tous ses membres.
-            </span>
-          </p>
-
-          <div class="flex justify-between items-center">
-            <button
-              @click="showMore = !showMore"
-              class="bg-purple-800 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors"
-            >
-              {{ showMore ? 'Réduire' : 'En Savoir Plus' }}
-            </button>
-          </div>
-        </div>
-      </article>
-    </section>
-  </div>
+    </div>
+  </section>
 </template>
 
-<script setup>
-import { ref } from 'vue'
-
-const showMore = ref(false)
-</script>
+<script setup></script>
