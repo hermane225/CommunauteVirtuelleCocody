@@ -1,6 +1,6 @@
 <template>
   <!-- nav bar section -->
-  <nav class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+  <nav class="mt-2 text-3xl tracking-tight text-gray-900 sm:text-4xl">
     Akwaba à la Communauté Virtuelle de Cocody ( cvc)
     <div class="text-xl"></div>
     <div class="flex md:hidden">
