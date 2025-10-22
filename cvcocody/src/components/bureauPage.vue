@@ -2,7 +2,7 @@
   <div>
     <section class="py-10" id="services">
       <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">
+        <h2 class="text-3xl mb-8 text-center">
           Les Membres du bureau de la Communauté Virtuelle de Cocody
         </h2>
         <!-- <br/> -->
