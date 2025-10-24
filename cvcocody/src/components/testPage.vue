@@ -1,7 +1,14 @@
 <template>
   <!-- nav bar section -->
   <nav class="mt-2 text-3xl tracking-tight text-gray-900 sm:text-4xl">
-    Akwaba à la Communauté Virtuelle de Cocody ( cvc)
+    <marquee
+      behavior="scroll"
+      direction="left"
+      class="bg-purple-800 inline-block text-white font-semibold text-lg"
+    >
+      Akwaba sur le site officiel de la Communauté Virtuelle de Cocody (CVC) — Une communauté
+      étudiante de l’Université Virtuelle de Côte d’Ivoire à Cocody !
+    </marquee>
     <div class="text-xl"></div>
     <div class="flex md:hidden">
       <button id="hamburger" @click="toggleMenu">
