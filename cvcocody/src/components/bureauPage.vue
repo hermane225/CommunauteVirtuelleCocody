@@ -45,7 +45,7 @@
           </div>
         </div> -->
           <div class="bg-white rounded-lg shadow-md overflow-hidden">
-            <img src="/src/assets/gboho.jpg" alt="affiche" class="w-full h-75 object-cover" />
+            <img src="/src/assets/pr.jpg" alt="affiche" class="w-full h-75 object-cover" />
             <div class="p-6 text-center">
               <h3 class="text-xl font-medium text-gray-800 mb-2">
                 <u> GBOHO NOUFE</u>
