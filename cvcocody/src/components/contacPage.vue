@@ -41,7 +41,13 @@
               </div>
               <div class="ml-4">
                 <dt class="text-lg leading-6 font-medium text-gray-900">Address</dt>
-                <dd class="mt-2 text-base text-gray-500">Cocody , Abidjan<br /></dd>
+                <a
+                  href="https://communaute-virtuelle-cocody-gfvp.vercel.app/  "
+                  target="_blank"
+                  class="mt-2 text-base text-gray-500"
+                >
+                  <u> site web</u><br
+                /></a>
               </div>
             </div>
 
