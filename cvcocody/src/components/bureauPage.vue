@@ -48,7 +48,7 @@
             <img src="/src/assets/gboho.jpg" alt="affiche" class="w-full h-75 object-cover" />
             <div class="p-6 text-center">
               <h3 class="text-xl font-medium text-gray-800 mb-2">
-                <u> GHOHO NOUFE</u>
+                <u> GBOHO NOUFE</u>
               </h3>
               <div class="text-gray-700 text-base">
                 Président de la Communauté Virtuelle de Cocody
@@ -72,10 +72,10 @@
             <img src="/src/assets/ngues.jpg" alt="affiche" class="w-full h-75 object-cover" />
             <div class="p-6 text-center">
               <h3 class="text-xl font-medium text-gray-800 mb-2">
-                <u> NGUESSAN EDI DIVINE CAROLINE</u>
+                <u> EDI N'GUESSAN DIVINE CAROLINE</u>
               </h3>
               <div class="text-gray-700 text-base">
-                Assistante au Président de la Communauté Virtuelle de Cocody
+                Assistante du Président de la Communauté Virtuelle de Cocody
               </div>
             </div>
           </div>
@@ -110,6 +110,18 @@
               </h3>
               <div class="text-gray-700 text-base">
                 Chargé de la communication de la Communauté Virtuelle de Cocody
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-lg shadow-md overflow-hidden">
+            <img src="/src/assets/michel.jpg" alt="Coffee" class="w-full h-75 object-cover" />
+            <div class="p-6 text-center">
+              <h3 class="text-xl font-medium text-gray-800 mb-2">
+                <u>TRAORE MICHEL IBRAHIM</u>
+              </h3>
+              <div class="text-gray-700 text-base">
+                Chargé à la mobilisation et organisation des évènements
               </div>
             </div>
           </div>
