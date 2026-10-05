@@ -8,6 +8,17 @@ import formPage from '@/components/formPage.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) return savedPosition
+    if (to.hash) {
+      // en changeant de page, on attend la fin de la transition avant de viser l'ancre
+      const delay = to.name === from.name ? 0 : 400
+      return new Promise((resolve) => {
+        setTimeout(() => resolve({ el: to.hash, top: 88, behavior: 'smooth' }), delay)
+      })
+    }
+    return { top: 0 }
+  },
   routes: [
     {
       path: '/',

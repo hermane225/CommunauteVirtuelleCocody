@@ -1,132 +1,100 @@
 <template>
   <div>
-    <section class="py-10" id="services">
-      <div class="container mx-auto px-4">
-        <h2 class="text-3xl mb-8 text-center">
-          Les Membres du bureau de la Communauté Virtuelle de Cocody
-        </h2>
-        <!-- <br/> -->
-        <p class="text-2xl mx-auto px-4">
-          Notre bureau est composé d’étudiants dynamiques et engagés, élus pour représenter et
-          coordonner les activités de la communauté. Ensemble, ils œuvrent au bon fonctionnement de
-          la CVC, à la mise en place d’initiatives locales, et à la promotion des valeurs de
-          l’Université Virtuelle de Côte d’Ivoire à Cocody.
+    <PageHeader
+      eyebrow="Le bureau"
+      title="Les membres du bureau de la Communauté Virtuelle de Cocody"
+      lead="Notre bureau est composé d’étudiants dynamiques et engagés, élus pour représenter et coordonner les activités de la communauté."
+    />
+
+    <section class="section-first" id="services">
+      <div class="container-page">
+        <p v-reveal class="max-w-3xl text-lg leading-relaxed text-ink/75">
+          Ensemble, ils œuvrent au bon fonctionnement de la CVC, à la mise en place d’initiatives
+          locales, et à la promotion des valeurs de l’Université Virtuelle de Côte d’Ivoire à
+          Cocody.
         </p>
-        <br />
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <!-- <div class="bg-white rounded-lg shadow-md overflow-hidden">
-          <img
-            src="https://image3.jdomni.in/banner/13062021/42/5C/B1/45AC18B7F8EE562BC3DDB95D34_1623559815667.png?output-format=webp"
-            alt="wheat flour grinding"
-            class="w-full h-64 object-cover"
-          />
-          <div class="p-6 text-center">
-            <h3 class="text-xl font-medium text-gray-800 mb-2">Wheat Flour Grinding</h3>
-            <p class="text-gray-700 text-base">
-              Our wheat flour grinding service provides fresh, high-quality flour to businesses and
-              individuals in the area. We use state-of-the-art equipment to grind wheat into flour,
-              and we offer a variety of flours to meet the needs of our customers.
-            </p>
-          </div>
-        </div> -->
-          <!-- <div class="bg-white rounded-lg shadow-md overflow-hidden">
-          <img
-            src="https://images.unsplash.com/photo-1606854428728-5fe3eea23475?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Z3JhbSUyMGZsb3VyfGVufDB8fDB8fHww"
-            alt="Coffee"
-            class="w-full h-64 object-cover"
-          />
-          <div class="p-6 text-center">
-            <h3 class="text-xl font-medium text-gray-800 mb-2">Gram Flour Grinding</h3>
-            <p class="text-gray-700 text-base">
-              Our gram flour is perfect for a variety of uses, including baking, cooking, and making
-              snacks. It is also a good source of protein and fiber.Our gram flour grinding service
-              is a convenient and affordable way to get the freshest gram flour possible.
-            </p>
-          </div>
-        </div> -->
-          <div class="bg-white rounded-lg shadow-md overflow-hidden">
-            <img src="/src/assets/pr.jpg" alt="affiche" class="w-full h-75 object-cover" />
-            <div class="p-6 text-center">
-              <h3 class="text-xl font-medium text-gray-800 mb-2">
-                <u> GBOHO NOUFE</u>
-              </h3>
-              <div class="text-gray-700 text-base">
-                Président de la Communauté Virtuelle de Cocody
-              </div>
-            </div>
-          </div>
 
-          <div class="bg-white rounded-lg shadow-md overflow-hidden">
-            <img src="/src/assets/vice.jpg" alt="affiche" class="w-full h-75 object-cover" />
-            <div class="p-6 text-center">
-              <h3 class="text-xl font-medium text-gray-800 mb-2">
-                <u>SIDIBE GNIAMAN MAHAMADOU</u>
-              </h3>
-              <div class="text-gray-700 text-base">
-                Vice-président de la Communauté Virtuelle de Cocody
-              </div>
+        <!-- président -->
+        <div v-reveal class="mt-8 sm:mt-12">
+          <article
+            class="grid overflow-hidden rounded-3xl bg-brand-900 text-white shadow-lift md:grid-cols-[minmax(0,22rem)_1fr]"
+          >
+            <img
+              :src="president.photo"
+              :alt="`Portrait de ${president.name}`"
+              class="aspect-square h-full w-full object-cover object-top sm:aspect-[4/5] md:aspect-auto"
+            />
+            <div class="flex flex-col justify-center p-6 sm:p-12">
+              <p class="eyebrow text-leaf-300">{{ president.role }}</p>
+              <h2 class="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
+                {{ president.name }}
+              </h2>
+              <p class="mt-5 max-w-md text-lg leading-relaxed text-white/75">
+                Président de la Communauté Virtuelle de Cocody, il conduit le bureau et porte la
+                vision de la communauté.
+              </p>
             </div>
-          </div>
+          </article>
+        </div>
 
-          <div class="bg-white rounded-lg shadow-md overflow-hidden">
-            <img src="/src/assets/ngues.jpg" alt="affiche" class="w-full h-75 object-cover" />
-            <div class="p-6 text-center">
-              <h3 class="text-xl font-medium text-gray-800 mb-2">
-                <u> EDI N'GUESSAN DIVINE CAROLINE</u>
-              </h3>
-              <div class="text-gray-700 text-base">
-                Assistante du Président de la Communauté Virtuelle de Cocody
+        <!-- autres membres -->
+        <div class="mt-3 grid grid-cols-2 gap-3 sm:mt-8 sm:gap-8 lg:grid-cols-3">
+          <div v-for="(membre, index) in membres" :key="membre.name" v-reveal="(index % 3) * 120">
+            <article
+              class="group relative h-full overflow-hidden rounded-2xl bg-ink shadow-soft sm:rounded-3xl transition duration-300 hover:-translate-y-1.5 hover:shadow-lift"
+            >
+              <img
+                :src="membre.photo"
+                :alt="`Portrait de ${membre.name}`"
+                loading="lazy"
+                class="aspect-[3/4] h-full w-full object-cover object-top transition duration-700 group-hover:scale-105 sm:aspect-[4/5]"
+              />
+              <div
+                class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink via-ink/85 to-transparent p-3 pt-14 text-white sm:p-6 sm:pt-20"
+              >
+                <h3 class="text-sm font-bold leading-tight tracking-tight sm:text-xl">
+                  {{ membre.name }}
+                </h3>
+                <p class="mt-1 text-xs font-medium text-leaf-300 sm:mt-1.5 sm:text-sm">
+                  {{ membre.role }}
+                </p>
               </div>
-            </div>
-          </div>
-
-          <div class="bg-white rounded-lg shadow-md overflow-hidden">
-            <img src="/src/assets/mano2.jpg" alt="Coffee" class="w-full h-75 object-cover" />
-            <div class="p-6 text-center">
-              <h3 class="text-xl font-medium text-gray-800 mb-2">
-                <u>N'GUESSAN HERMANE JUNIOR</u>
-              </h3>
-              <div class="text-gray-700 text-base">
-                Chargé de la Formation de la communauté Virtuelle de Cocody
-              </div>
-            </div>
-          </div>
-
-          <div class="bg-white rounded-lg shadow-md overflow-hidden">
-            <img src="/src/assets/dev.jpg" alt="Coffee" class="w-full h-75 object-cover" />
-            <div class="p-6 text-center">
-              <h3 class="text-xl font-medium text-gray-800 mb-2">
-                <u>KOUASSI EDGAR</u>
-              </h3>
-              <div class="text-gray-700 text-base">Chargé de la Comptabilité</div>
-            </div>
-          </div>
-
-          <div class="bg-white rounded-lg shadow-md overflow-hidden">
-            <img src="/src/assets/alex.jpg" alt="affiche" class="w-full h-75 object-cover" />
-            <div class="p-6 text-center">
-              <h3 class="text-xl font-medium text-gray-800 mb-2">
-                <u> KOFFI KOUADIO JEAN ALEX</u>
-              </h3>
-              <div class="text-gray-700 text-base">
-                Chargé de la communication de la Communauté Virtuelle de Cocody
-              </div>
-            </div>
-          </div>
-
-          <div class="bg-white rounded-lg shadow-md overflow-hidden">
-            <img src="/src/assets/michel.jpg" alt="Coffee" class="w-full h-75 object-cover" />
-            <div class="p-6 text-center">
-              <h3 class="text-xl font-medium text-gray-800 mb-2">
-                <u>TRAORE MICHEL IBRAHIM</u>
-              </h3>
-              <div class="text-gray-700 text-base">
-                Chargé à la mobilisation et organisation des évènements
-              </div>
-            </div>
+            </article>
           </div>
         </div>
       </div>
     </section>
+
+    <CtaBand
+      title="Envie de vous impliquer&nbsp;?"
+      text="Rejoignez la communauté et participez aux prochaines activités aux côtés du bureau."
+    />
   </div>
 </template>
+
+<script setup>
+import PageHeader from './PageHeader.vue'
+import CtaBand from './CtaBand.vue'
+import pr from '@/assets/pr.jpg'
+import vice from '@/assets/vice.jpg'
+import ngues from '@/assets/ngues.jpg'
+import mano2 from '@/assets/mano2.jpg'
+import dev from '@/assets/dev.jpg'
+import alex from '@/assets/alex.jpg'
+import michel from '@/assets/michel.jpg'
+
+const president = { name: 'GBOHO NOUFE', role: 'Président', photo: pr }
+
+const membres = [
+  { name: 'SIDIBE GNIAMAN MAHAMADOU', role: 'Vice-président', photo: vice },
+  { name: 'EDI N’GUESSAN DIVINE CAROLINE', role: 'Assistante du Président', photo: ngues },
+  { name: 'N’GUESSAN HERMANE JUNIOR', role: 'Chargé de la Formation', photo: mano2 },
+  { name: 'KOUASSI EDGAR', role: 'Chargé de la Comptabilité', photo: dev },
+  { name: 'KOFFI KOUADIO JEAN ALEX', role: 'Chargé de la Communication', photo: alex },
+  {
+    name: 'TRAORE MICHEL IBRAHIM',
+    role: 'Chargé de la mobilisation et de l’organisation des évènements',
+    photo: michel,
+  },
+]
+</script>

@@ -1,110 +1,161 @@
 <template>
-  <nav class="bg-white border-gray-200 dark:bg-gray-900">
-    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-      <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
-        <img src="/src/assets/WhatsApp Image.jpg" class="h-auto w-40" alt="uvci-cvc" />
-        <!-- <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Communauté Virtuelle de Cocody</span> -->
-      </a>
-      <button
-        data-collapse-toggle="navbar-default"
-        type="button"
-        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-        aria-controls="navbar-default"
-        aria-expanded="false"
-        @click="toggle"
-      >
-        <span v-show="ismenuOpen" class="sr-only">Open main menu</span>
-        <svg
-          class="w-5 h-5"
-          aria-hidden="true"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 17 14"
+  <!-- bandeau Akwaba -->
+  <div class="overflow-hidden bg-brand-800 py-2 text-sm font-medium text-white">
+    <div class="flex w-max animate-ticker whitespace-nowrap">
+      <p v-for="n in 2" :key="n" class="flex shrink-0 items-center" :aria-hidden="n === 2">
+        <span v-for="i in 2" :key="i" class="flex items-center">
+          <span class="px-6">
+            Akwaba sur le site officiel de la Communauté Virtuelle de Cocody (CVC)
+          </span>
+          <span class="text-leaf-300" aria-hidden="true">✦</span>
+          <span class="px-6">
+            Une communauté étudiante de l’Université Virtuelle de Côte d’Ivoire à Cocody
+          </span>
+          <span class="text-leaf-300" aria-hidden="true">✦</span>
+        </span>
+      </p>
+    </div>
+  </div>
+
+  <nav
+    class="sticky top-0 z-40 border-b bg-white/85 backdrop-blur-md transition-shadow duration-300"
+    :class="scrolled ? 'border-ink/10 shadow-soft' : 'border-transparent'"
+    aria-label="Navigation principale"
+  >
+    <div class="container-page flex items-center justify-between py-3">
+      <router-link :to="{ name: 'testPage' }" class="group flex items-center gap-3">
+        <img
+          :src="logo"
+          alt="Logo de la Communauté Virtuelle de Cocody"
+          class="h-12 w-12 rounded-full object-cover ring-1 ring-ink/10 transition duration-300 group-hover:rotate-[-6deg]"
+        />
+        <span class="leading-tight">
+          <span class="block font-display text-lg font-bold tracking-tight text-brand-800"
+            >CVC</span
+          >
+          <span class="hidden text-xs text-ink/60 sm:block">Communauté Virtuelle de Cocody</span>
+        </span>
+      </router-link>
+
+      <ul class="hidden items-center gap-1 lg:flex">
+        <li v-for="link in links" :key="link.label">
+          <router-link
+            :to="link.to"
+            class="rounded-full px-4 py-2 text-sm font-medium transition"
+            :class="
+              isActive(link)
+                ? 'bg-brand-50 text-brand-800'
+                : 'text-ink/70 hover:bg-ink/5 hover:text-ink'
+            "
+            :aria-current="isActive(link) ? 'page' : undefined"
+          >
+            {{ link.label }}
+          </router-link>
+        </li>
+      </ul>
+
+      <div class="flex items-center gap-2">
+        <router-link :to="{ name: 'formePage' }" class="btn btn-brand hidden sm:inline-flex">
+          Rejoindre la communauté
+          <ArrowRightIcon class="h-4 w-4" />
+        </router-link>
+        <button
+          type="button"
+          class="flex h-11 w-11 items-center justify-center rounded-full text-ink transition hover:bg-ink/5 lg:hidden"
+          aria-controls="menu-mobile"
+          :aria-expanded="isMenuOpen"
+          @click="toggle"
         >
-          <path
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M1 1h15M1 7h15M1 13h15"
-          />
-        </svg>
-      </button>
-      <div
-        class="w-full md:block md:w-auto"
-        id="navbar-default"
-        :class="{ hidden: !ismenuOpen && isMobile }"
-      >
-        <ul
-          class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700"
-        >
-          <li>
+          <span class="sr-only">{{ isMenuOpen ? 'Fermer le menu' : 'Ouvrir le menu' }}</span>
+          <XMarkIcon v-if="isMenuOpen" class="h-6 w-6" />
+          <Bars3Icon v-else class="h-6 w-6" />
+        </button>
+      </div>
+    </div>
+
+    <Transition name="menu">
+      <div v-if="isMenuOpen" id="menu-mobile" class="border-t border-ink/10 bg-white lg:hidden">
+        <ul class="container-page flex flex-col gap-1 py-4">
+          <li v-for="link in links" :key="link.label">
             <router-link
-              :to="{ name: 'testPage' }"
-              class="block py-2 px-3 text-white bg-blue-700 rounded-sm md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500"
-              aria-current="page"
-              >Accueil</router-link
+              :to="link.to"
+              class="block rounded-xl px-4 py-3 text-base font-medium transition"
+              :class="isActive(link) ? 'bg-brand-50 text-brand-800' : 'text-ink/80 hover:bg-ink/5'"
             >
+              {{ link.label }}
+            </router-link>
           </li>
-          <li>
-            <router-link
-              :to="{ name: 'pageaccuiel' }"
-              class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-              >À propos</router-link
-            >
-          </li>
-          <li>
-            <router-link
-              :to="{ name: 'bureauPage' }"
-              class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-              >Bureau</router-link
-            >
-          </li>
-          <li>
-            <router-link
-              :to="{ name: 'testPage' }"
-              class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-              >Galerie</router-link
-            >
-          </li>
-          <li>
-            <router-link
-              :to="{ name: 'contacPage' }"
-              class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-              >Contact</router-link
-            >
-          </li>
-          <li>
-            <router-link :to="{ name: 'formePage' }">
-              <button
-                type="button"
-                class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
-              >
-                Réjoindre la communauté >
-              </button>
+          <li class="pt-2 sm:hidden">
+            <router-link :to="{ name: 'formePage' }" class="btn btn-brand w-full">
+              Rejoindre la communauté
+              <ArrowRightIcon class="h-4 w-4" />
             </router-link>
           </li>
         </ul>
       </div>
-    </div>
+    </Transition>
   </nav>
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
-const ismenuOpen = ref(false)
-const isMobile = ref(false)
+import { ref, watch, onMounted, onBeforeUnmount } from 'vue'
+import { useRoute } from 'vue-router'
+import { ArrowRightIcon, Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline'
+import logo from '@/assets/c.jpg'
 
-function toggle() {
-  ismenuOpen.value = !ismenuOpen.value
+const route = useRoute()
+const isMenuOpen = ref(false)
+const scrolled = ref(false)
+
+const links = [
+  { label: 'Accueil', to: { name: 'testPage' } },
+  { label: 'À propos', to: { name: 'pageaccuiel' } },
+  { label: 'Bureau', to: { name: 'bureauPage' } },
+  { label: 'Événements', to: { name: 'testPage', hash: '#evenements' } },
+  { label: 'Galerie', to: { name: 'testPage', hash: '#galerie' } },
+  { label: 'Contact', to: { name: 'contacPage' } },
+]
+
+function isActive(link) {
+  return route.name === link.to.name && (route.hash || '') === (link.to.hash || '')
 }
 
-onMounted(() => {
-  const updateSize = () => {
-    isMobile.value = window.innerWidth < 768
-  }
+function toggle() {
+  isMenuOpen.value = !isMenuOpen.value
+}
 
-  updateSize()
-  window.addEventListener('resize', updateSize)
+function onScroll() {
+  scrolled.value = window.scrollY > 8
+}
+
+watch(
+  () => route.fullPath,
+  () => {
+    isMenuOpen.value = false
+  },
+)
+
+onMounted(() => {
+  onScroll()
+  window.addEventListener('scroll', onScroll, { passive: true })
+})
+
+onBeforeUnmount(() => {
+  window.removeEventListener('scroll', onScroll)
 })
 </script>
+
+<style scoped>
+.menu-enter-active,
+.menu-leave-active {
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.menu-enter-from,
+.menu-leave-to {
+  opacity: 0;
+  transform: translateY(-8px);
+}
+</style>

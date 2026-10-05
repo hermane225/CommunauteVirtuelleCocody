@@ -1,41 +1,146 @@
-@import './base.css';
-
-
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* #app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  font-weight: normal;
-}
-
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-  padding: 3px;
-}
-
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
+@layer base {
+  html {
+    scroll-padding-top: 6rem;
   }
-}
 
-@media (min-width: 1024px) {
   body {
-    display: flex;
-    place-items: center;
+    @apply min-h-screen bg-paper font-sans text-ink antialiased;
+    overflow-x: clip;
+    text-rendering: optimizeLegibility;
   }
 
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
+  h1,
+  h2,
+  h3 {
+    @apply font-display;
+    text-wrap: balance;
   }
-} */
+
+  ::selection {
+    @apply bg-brand-200 text-brand-950;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-brand-500;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
+  }
+
+  .eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.2em];
+  }
+
+  /* espacement vertical des sections ; -first suit directement un en-tête de page */
+  .section {
+    @apply py-14 sm:py-24;
+  }
+
+  .section-first {
+    @apply pb-14 pt-8 sm:pb-24 sm:pt-12;
+  }
+
+  .section-title {
+    @apply font-display text-[1.75rem] font-bold leading-tight tracking-tight text-ink sm:text-4xl;
+  }
+
+  .no-scrollbar {
+    scrollbar-width: none;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition duration-200 active:scale-[0.98];
+  }
+
+  .btn-leaf {
+    @apply bg-leaf-400 text-ink shadow-soft hover:bg-leaf-300;
+  }
+
+  .btn-brand {
+    @apply bg-brand-700 text-white shadow-soft hover:bg-brand-800;
+  }
+
+  .btn-outline {
+    @apply border border-ink/15 bg-white text-ink hover:border-brand-400 hover:text-brand-700;
+  }
+
+  .btn-ghost {
+    @apply border border-white/25 text-white hover:border-white/60 hover:bg-white/10;
+  }
+
+  .field {
+    @apply w-full rounded-xl border border-ink/15 bg-white px-4 py-3 text-ink placeholder:text-ink/40 transition focus:border-brand-500 focus:outline-none focus:ring-4 focus:ring-brand-100;
+  }
+
+  /* fond sombre réutilisé par le hero, les en-têtes de page et le pied de page */
+  .surface-dark {
+    background-color: theme('colors.ink');
+    background-image:
+      radial-gradient(60rem 30rem at 85% -10%, rgba(169, 69, 198, 0.45), transparent 60%),
+      radial-gradient(40rem 26rem at -10% 110%, rgba(76, 175, 80, 0.28), transparent 60%),
+      radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+    background-size:
+      auto,
+      auto,
+      22px 22px;
+  }
+}
+
+/* apparition au défilement (directive v-reveal) */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.7s cubic-bezier(0.2, 0.7, 0.2, 1),
+    transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* transition entre les pages */
+.page-enter-active,
+.page-leave-active {
+  transition:
+    opacity 0.22s ease,
+    transform 0.22s ease;
+}
+
+.page-enter-from {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.page-leave-to {
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}

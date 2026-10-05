@@ -1,120 +1,271 @@
 <template>
-  <section class="overflow-hidden bg-white py-8 sm:py-16">
-    <div class="mx-auto max-w-5xl px-6 lg:px-8">
-      <!-- Partie texte en haut -->
-      <div class="text-center lg:text-left">
-        <p class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-          Découvrons ensemble la Communauté Virtuelle de Cocody
-        </p>
+  <div>
+    <PageHeader
+      eyebrow="À propos"
+      title="Découvrons ensemble la Communauté Virtuelle de Cocody"
+      lead="Une initiative étudiante de l’UVCI pour apprendre, s’entraider et grandir ensemble."
+    />
 
-        <h2 class="text-base font-semibold leading-7 text-gray-600 mt-4">Unir, Former, Inspirer</h2>
+    <!-- présentation -->
+    <section class="section-first">
+      <div class="container-page grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+        <div v-reveal>
+          <p class="eyebrow text-brand-600">Qui sommes-nous ?</p>
+          <h2 class="section-title mt-3">Une initiative étudiante, ancrée à Cocody</h2>
+          <p class="mt-5 text-lg leading-relaxed text-ink/75">
+            La Communauté Virtuelle de Cocody (CVC) est une initiative étudiante de l’Université
+            Virtuelle de Côte d’Ivoire (UVCI) regroupant les apprenants résidant dans la commune de
+            Cocody ou ses environs. Née de la volonté de renforcer les liens entre étudiants de la
+            formation à distance, la CVC se veut un espace de rencontre, d’apprentissage et
+            d’innovation collective.
+          </p>
+          <ul class="mt-7 flex flex-wrap gap-2">
+            <li
+              v-for="repere in reperes"
+              :key="repere.label"
+              class="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-medium shadow-soft ring-1 ring-ink/5"
+            >
+              <component :is="repere.icon" class="h-4 w-4 text-leaf-600" />
+              {{ repere.label }}
+            </li>
+          </ul>
+        </div>
 
-        <p class="mt-6 text-lg leading-8 text-gray-600 text-justify">
-          La Communauté Virtuelle de Cocody (CVC) est une initiative étudiante de l’Université
-          Virtuelle de Côte d’Ivoire (UVCI) regroupant les apprenants résidant dans la commune de
-          Cocody ou ses environs. Née de la volonté de renforcer les liens entre étudiants de la
-          formation à distance, la CVC se veut un espace de rencontre, d’apprentissage et
-          d’innovation collective.
-          <br /><br />
-          Sa mission principale est de favoriser l’épanouissement académique, professionnel et
-          social de ses membres. À travers diverses activités — rencontres en présentiel, ateliers
-          pratiques, formations, conférences et projets collaboratifs — la communauté encourage la
-          mise en réseau, le partage d’expériences et le développement de compétences
-          complémentaires à la formation universitaire.
-          <br /><br />
-          Plus qu’un simple regroupement, la CVC incarne les valeurs de solidarité, de leadership et
-          d’excellence propres à l’UVCI. Elle œuvre à créer un cadre stimulant, où chaque étudiant
-          peut s’exprimer, apprendre des autres et contribuer activement à la vie de la communauté.
-          <br /><br />
-          En rejoignant la Communauté Virtuelle de Cocody, chaque membre devient acteur de son
-          propre parcours : il bénéficie d’un accompagnement par les pairs, découvre des
-          opportunités de collaboration et participe à la construction d’une culture numérique
-          inclusive et dynamique au service du développement de la Côte d’Ivoire.
-        </p>
-
-        <!-- Points clés -->
-        <dl
-          class="mt-10 max-w-xl mx-auto space-y-8 text-base leading-7 text-gray-600 lg:max-w-none"
-        >
-          <div class="relative pl-9">
-            <dt class="inline font-semibold text-gray-900">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                aria-hidden="true"
-                class="absolute left-1 top-1 h-5 w-5 text-indigo-600"
-              >
-                <path
-                  d="M3.196 12.87l-.825.483a.75.75 0 000 1.294l7.25 4.25a.75.75 0 00.758 0l7.25-4.25a.75.75 0 000-1.294l-.825-.484-5.666 3.322a2.25 2.25 0 01-2.276 0L3.196 12.87z"
-                />
-              </svg>
-              Engagement local
-            </dt>
-            <dd class="inline">
-              <br />
-              Ancrée à Cocody, la communauté rassemble les étudiants pour apprendre, collaborer et
-              grandir ensemble.
-            </dd>
+        <div v-reveal="150" class="relative">
+          <div class="grid grid-cols-2 gap-3 sm:gap-4">
+            <img
+              :src="photos.bg"
+              alt="Étudiants de la Communauté Virtuelle de Cocody lors d’une rencontre"
+              class="col-span-2 aspect-[16/10] w-full rounded-3xl object-cover shadow-soft"
+            />
+            <img
+              :src="photos.arriere"
+              alt="Présentation de la CVC devant les étudiants"
+              loading="lazy"
+              class="aspect-[4/3] w-full rounded-3xl object-cover shadow-soft"
+            />
+            <img
+              :src="photos.f"
+              alt="Étudiantes et étudiants assis au premier rang"
+              loading="lazy"
+              class="aspect-[4/3] w-full rounded-3xl object-cover shadow-soft"
+            />
           </div>
-
-          <div class="relative pl-9">
-            <dt class="inline font-semibold text-gray-900">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                aria-hidden="true"
-                class="absolute left-1 top-1 h-5 w-5 text-indigo-600"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M12 2C8.13 2 5 5.13 5 9c0 4.5 7 13 7 13s7-8.5 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-              Solidarité étudiante
-            </dt>
-            <dd class="inline">
-              <br />Un espace d’entraide et de partage où chaque étudiant trouve du soutien.
-            </dd>
+          <div
+            class="absolute left-1/2 top-[58%] flex h-20 w-20 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white shadow-lift ring-4 ring-paper sm:h-24 sm:w-24"
+          >
+            <img
+              :src="photos.logo"
+              alt=""
+              class="h-16 w-16 rounded-full object-cover sm:h-20 sm:w-20"
+            />
           </div>
+        </div>
+      </div>
+    </section>
 
-          <div class="relative pl-9">
-            <dt class="inline font-semibold text-gray-900">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                aria-hidden="true"
-                class="absolute left-1 top-1 h-5 w-5 text-indigo-600"
+    <!-- la devise -->
+    <section class="surface-dark py-14 text-white sm:py-20">
+      <div class="container-page">
+        <p v-reveal class="eyebrow text-leaf-300">Notre devise</p>
+        <div class="mt-6 grid divide-y divide-white/10 md:grid-cols-3 md:divide-x md:divide-y-0">
+          <div
+            v-for="(mot, index) in devise"
+            :key="mot.titre"
+            v-reveal="index * 140"
+            class="py-6 first:pt-0 last:pb-0 md:px-8 md:py-0 md:first:pl-0 md:last:pr-0"
+          >
+            <h2
+              class="text-5xl font-extrabold tracking-tight sm:text-6xl"
+              :class="index === 2 ? 'text-leaf-300' : 'text-white'"
+            >
+              {{ mot.titre }}
+            </h2>
+            <p class="mt-3 leading-relaxed text-white/75">{{ mot.texte }}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- mission, valeurs, place de chacun -->
+    <section class="section">
+      <div class="container-page grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
+        <div v-reveal class="lg:sticky lg:top-28 lg:self-start">
+          <p class="eyebrow text-brand-600">Notre raison d’être</p>
+          <h2 class="section-title mt-3">Plus qu’un simple regroupement</h2>
+          <img
+            :src="photos.bureau"
+            alt="Membres du bureau de la communauté réunis"
+            loading="lazy"
+            class="mt-8 hidden aspect-[4/3] w-full rounded-3xl object-cover shadow-soft lg:block"
+          />
+        </div>
+
+        <ol class="space-y-5">
+          <li v-for="(etape, index) in etapes" :key="etape.titre" v-reveal="index * 120">
+            <div
+              class="group flex flex-col gap-4 rounded-3xl bg-white p-5 shadow-soft ring-1 ring-ink/5 transition duration-300 hover:-translate-y-1 hover:shadow-lift sm:flex-row sm:gap-6 sm:p-8"
+            >
+              <span
+                class="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-brand-50 font-display text-lg font-extrabold text-brand-700 transition duration-300 group-hover:bg-brand-700 group-hover:text-white sm:h-14 sm:w-14 sm:text-xl"
               >
-                <path
-                  fill-rule="evenodd"
-                  d="M14.5 10a4.5 4.5 0 004.284-5.882c-.105-.324-.51-.391-.752-.15L15.34 6.66a.454.454 0 01-.493.11 3.01 3.01 0 01-1.618-1.616.455.455 0 01.11-.494l2.694-2.692c.24-.241.174-.647-.15-.752a4.5 4.5 0 00-5.873 4.575c.055.873-.128 1.808-.8 2.368l-7.23 6.024a2.724 2.724 0 103.837 3.837l6.024-7.23c.56-.672 1.495-.855 2.368-.8z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-              Activités et rencontres
-            </dt>
-            <dd class="inline">
-              <br />Des ateliers et conférences pour renforcer les compétences et inspirer la
-              réussite.
-            </dd>
+                0{{ index + 1 }}
+              </span>
+              <div>
+                <h3 class="text-xl font-bold tracking-tight sm:text-2xl">{{ etape.titre }}</h3>
+                <p class="mt-3 leading-relaxed text-ink/75">{{ etape.texte }}</p>
+              </div>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- points clés -->
+    <section class="section bg-white">
+      <div class="container-page">
+        <div v-reveal class="max-w-2xl">
+          <p class="eyebrow text-brand-600">Nos piliers</p>
+          <h2 class="section-title mt-3">Ce qui fait la CVC</h2>
+        </div>
+        <dl class="mt-8 grid gap-4 sm:mt-12 sm:gap-6 md:grid-cols-3">
+          <div v-for="(point, index) in points" :key="point.title" v-reveal="index * 120">
+            <div
+              class="flex h-full gap-4 rounded-3xl bg-paper p-5 ring-1 ring-ink/5 sm:p-7 md:flex-col md:gap-0"
+            >
+              <span
+                class="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-brand-700 text-white sm:h-14 sm:w-14"
+              >
+                <component :is="point.icon" class="h-6 w-6 sm:h-7 sm:w-7" />
+              </span>
+              <div>
+                <dt class="font-display text-lg font-bold tracking-tight sm:text-xl md:mt-6">
+                  {{ point.title }}
+                </dt>
+                <dd class="mt-1.5 leading-relaxed text-ink/70 md:mt-3">{{ point.text }}</dd>
+              </div>
+            </div>
           </div>
         </dl>
       </div>
+    </section>
 
-      <!-- Image en bas -->
-      <div class="mt-16 flex justify-center">
-        <img
-          src="/src/assets/bg.jpg"
-          alt="Illustration de la Communauté Virtuelle de Cocody"
-          class="w-full max-w-4xl rounded-xl shadow-xl ring-1 ring-gray-400/10"
-        />
+    <!-- mot du président -->
+    <section class="section">
+      <div class="container-page">
+        <figure v-reveal class="mx-auto max-w-3xl text-center">
+          <span
+            class="font-display text-7xl font-extrabold leading-none text-brand-200"
+            aria-hidden="true"
+          >
+            “
+          </span>
+          <blockquote
+            class="-mt-6 font-display text-2xl font-bold leading-snug tracking-tight sm:text-4xl"
+          >
+            Servir, former et innover demeurent les piliers du développement de la communauté.
+          </blockquote>
+          <figcaption class="mt-8 flex items-center justify-center gap-4 text-left">
+            <img
+              :src="photos.president"
+              alt="Portrait de Gboho Nouffé"
+              loading="lazy"
+              class="h-14 w-14 rounded-full object-cover object-top ring-2 ring-brand-200"
+            />
+            <span>
+              <span class="block font-semibold">Gboho Nouffé</span>
+              <span class="text-sm text-ink/60">Président de la CVC</span>
+            </span>
+          </figcaption>
+          <router-link :to="{ name: 'bureauPage' }" class="btn btn-outline mt-8">
+            Rencontrer le bureau
+            <ArrowRightIcon class="h-4 w-4" />
+          </router-link>
+        </figure>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <CtaBand
+      title="Devenez acteur de votre parcours."
+      text="Accompagnement par les pairs, opportunités de collaboration et culture numérique inclusive."
+    />
+  </div>
 </template>
 
-<script setup></script>
+<script setup>
+import {
+  AcademicCapIcon,
+  ArrowRightIcon,
+  CalendarDaysIcon,
+  ComputerDesktopIcon,
+  HandRaisedIcon,
+  MapPinIcon,
+} from '@heroicons/vue/24/outline'
+import PageHeader from './PageHeader.vue'
+import CtaBand from './CtaBand.vue'
+import arriere from '@/assets/arriere.jpg'
+import bg from '@/assets/bg.jpg'
+import bureau from '@/assets/bureau.jpg'
+import f from '@/assets/f.jpg'
+import logo from '@/assets/c.jpg'
+import president from '@/assets/pr.jpg'
+
+const photos = { arriere, bg, bureau, f, logo, president }
+
+const reperes = [
+  { icon: AcademicCapIcon, label: 'Étudiants de l’UVCI' },
+  { icon: MapPinIcon, label: 'Cocody et ses environs' },
+  { icon: ComputerDesktopIcon, label: 'En présentiel et en ligne' },
+]
+
+const devise = [
+  {
+    titre: 'Unir',
+    texte: 'Renforcer les liens entre étudiants de la formation à distance.',
+  },
+  {
+    titre: 'Former',
+    texte: 'Ateliers pratiques, formations, conférences et projets collaboratifs.',
+  },
+  {
+    titre: 'Inspirer',
+    texte: 'Un cadre stimulant où chacun peut s’exprimer et apprendre des autres.',
+  },
+]
+
+const etapes = [
+  {
+    titre: 'Notre mission',
+    texte:
+      'Sa mission principale est de favoriser l’épanouissement académique, professionnel et social de ses membres. À travers diverses activités — rencontres en présentiel, ateliers pratiques, formations, conférences et projets collaboratifs — la communauté encourage la mise en réseau, le partage d’expériences et le développement de compétences complémentaires à la formation universitaire.',
+  },
+  {
+    titre: 'Nos valeurs',
+    texte:
+      'Plus qu’un simple regroupement, la CVC incarne les valeurs de solidarité, de leadership et d’excellence propres à l’UVCI. Elle œuvre à créer un cadre stimulant, où chaque étudiant peut s’exprimer, apprendre des autres et contribuer activement à la vie de la communauté.',
+  },
+  {
+    titre: 'Votre place',
+    texte:
+      'En rejoignant la Communauté Virtuelle de Cocody, chaque membre devient acteur de son propre parcours : il bénéficie d’un accompagnement par les pairs, découvre des opportunités de collaboration et participe à la construction d’une culture numérique inclusive et dynamique au service du développement de la Côte d’Ivoire.',
+  },
+]
+
+const points = [
+  {
+    icon: MapPinIcon,
+    title: 'Engagement local',
+    text: 'Ancrée à Cocody, la communauté rassemble les étudiants pour apprendre, collaborer et grandir ensemble.',
+  },
+  {
+    icon: HandRaisedIcon,
+    title: 'Solidarité étudiante',
+    text: 'Un espace d’entraide et de partage où chaque étudiant trouve du soutien.',
+  },
+  {
+    icon: CalendarDaysIcon,
+    title: 'Activités et rencontres',
+    text: 'Des ateliers et conférences pour renforcer les compétences et inspirer la réussite.',
+  },
+]
+</script>
